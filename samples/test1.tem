@@ -1,0 +1,12 @@
+Page p1 extends p2, p3 {
+    in: textField(name);
+    in: textField(pass);
+    in: button(submit);
+}
+
+Controller c1 controls p1 {
+    @submit {
+        if (valid(name, pass))
+            goto(p4);
+    }
+}
