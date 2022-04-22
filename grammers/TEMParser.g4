@@ -8,7 +8,11 @@ options {
     tokenVocab=TEMLexer;
 }
 
-program: ( page | controller)*;
+program: big_component*;
+
+
+big_component : page controller ;
+
 
 // Page
 page: PAGE pageId=ID ( EXTENDS ID (',' ID)* )? pageBody;
