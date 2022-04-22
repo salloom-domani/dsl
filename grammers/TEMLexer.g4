@@ -38,9 +38,9 @@ IF: 'if';
 WHILE: 'while';
 
 
-ID: Char+ Digit*;
+ID: Char+ (Char|Digit|UNDER_SCORE)*;
 
-STRING: '"' ~[\n\r]*? '"';
+STRING: '"' .*? '"';
 INTEGER: Digit+;
 BOOLEAN: 'true' | 'false';
 
@@ -58,6 +58,7 @@ SEMI_COLON: ';';
 AT: '@';
 COLON: ':';
 ASSIGN: '=';
+UNDER_SCORE: '_';
 
 // Boolean comparasion
 EQ: '==';
