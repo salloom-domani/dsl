@@ -1,4 +1,4 @@
-package ast.page;
+package ast.page.component;
 
 /**
  * Component

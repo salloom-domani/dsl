@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import ast.controller.event.Event;
-import ast.page.Component;
 import ast.page.Page;
+import ast.page.component.Component;
 
 /**
  * Controller

@@ -25,8 +25,8 @@ import ast.controller.block.Expression;
 import ast.controller.block.IfBlock;
 import ast.controller.block.Statement;
 import ast.controller.event.Event;
-import ast.page.Component;
 import ast.page.Page;
+import ast.page.component.Component;
 import ast.page.component.Input;
 import ast.page.component.Output;
 

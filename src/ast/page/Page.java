@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ast.controller.Controller;
+import ast.page.component.Component;
 
 /**
  * Page

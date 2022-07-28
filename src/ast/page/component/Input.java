@@ -1,7 +1,5 @@
 package ast.page.component;
 
-import ast.page.Component;
-
 /**
  * Input
  */
