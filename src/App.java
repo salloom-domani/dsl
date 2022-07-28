@@ -5,7 +5,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import base.TEMLexer;
 import base.TEMParser;
+import exporter.Exporter;
+import generator.HtmlGenerator;
 import visitor.TEMVisitor;
+
 
 public class App {
 
@@ -19,6 +22,10 @@ public class App {
         ParseTree pt = parser.program();
         TEMVisitor visitor = new TEMVisitor();
         visitor.visit(pt);
-        System.out.println(visitor.pages.get("p2").getComponentById("image").toString());
+        // System.out.println(visitor.pages.get("p2").getComponentById("image").toString());
+    
+        var html = new HtmlGenerator().generate();
+        Exporter.exportHtmlFile(html);
+
     }
 }
