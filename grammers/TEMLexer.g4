@@ -6,31 +6,30 @@ lexer grammar TEMLexer;
 
 
 // Classes
-PAGE: 'Page';
+PAGE: 'page';
 EXTENDS: 'extends';
 
-CONTROLLER: 'Controller';
+CONTROLLER: 'controller';
 CONTROLS: 'controls';
 
 
 // Input Fields
 IN: 'in';
-TEXT_FIELD: 'textField';
-RADIO: 'radio';
-CHECKBOX: 'checkbox';
-BUTTON: 'button';
+TEXT_FIELD: 'TextField';
+RADIO: 'Radio';
+CHECKBOX: 'Checkbox';
+BUTTON: 'Button';
 
 // Output Fields
 OUT: 'out';
-TEXT: 'text';
-IMAGE: 'image';
+TEXT: 'Text';
+IMAGE: 'Image';
 
 
 // Types
 INT_TYPE: 'int';
 BOOL_TYPE: 'bool';
 STRING_TYPE: 'string';
-TEXT_FIELD_TYPE: 'TextField';
 
 
 // Control Flow
@@ -46,6 +45,13 @@ BOOLEAN: 'true' | 'false';
 
 
 WS: [\n\r\t ] -> skip;
+
+// Comment Symbol
+COMMENT
+    : '%' ~[\n]*? '\n'
+    | '%%' .*? '%%'
+    ;
+
 
 
 // Syntax
@@ -75,7 +81,6 @@ PLUS: '+';
 MINUS: '-';
 MULTIPLY: '*';
 DIVIDE: '/';
-MOD: '%';
 
 
 fragment Digit: [0-9];

@@ -301,6 +301,18 @@ public class TEMParserBaseListener implements TEMParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMathmaticOperator(TEMParser.MathmaticOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComment(TEMParser.CommentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComment(TEMParser.CommentContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

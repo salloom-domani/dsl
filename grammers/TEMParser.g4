@@ -8,11 +8,12 @@ options {
     tokenVocab=TEMLexer;
 }
 
-program: ( page | controller)*;
+program: ( page | controller | comment )*;
+
 
 // Page
 page: PAGE pageId=ID ( EXTENDS ID (',' ID)* )? pageBody;
-pageBody: '{' component* '}';
+pageBody: '{' (component | comment)* '}';
 component
     : in 
     | out 
@@ -21,7 +22,7 @@ component
 
 
 // Components
-in: IN ':' inputField '(' fieldId=ID ')' ( '@' eventId=ID )? ';';
+in: IN ':' inputField '(' fieldId=ID? ')' ( '@' eventId=ID )? ';';
 inputField
     : TEXT_FIELD 
     | BUTTON 
@@ -65,7 +66,6 @@ call: ID '(' expressionList? ')' ';';
 type
     : STRING_TYPE
     | INT_TYPE
-    | TEXT_FIELD_TYPE
     ;
 
 expression
@@ -84,4 +84,7 @@ value
     ;
 
 booleanOperator: '==' | '<' | '>' | '<=' | '>=';
-mathmaticOperator: '+' | '-' | '*' | '/' | '%';
+mathmaticOperator: '+' | '-' | '*' | '/';
+
+// Comment
+comment: COMMENT;

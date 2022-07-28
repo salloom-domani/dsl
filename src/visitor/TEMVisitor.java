@@ -30,7 +30,7 @@ import ast.page.Page;
 import ast.page.component.Input;
 import ast.page.component.Output;
 
-public class TEMVisitor extends TEMParserBaseVisitor {
+public class TEMVisitor extends TEMParserBaseVisitor<Object> {
 
     public HashMap<String, Page> pages;
     public HashMap<String, Controller> controllers;

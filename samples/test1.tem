@@ -1,12 +1,20 @@
-Page p1 extends p2, p3 {
-    in: textField(name);
-    in: textField(pass);
-    in: button(submit);
+page p1 extends p2, p3 {
+    in: TextField(name); % An inline comment
+    in: TextField(pass);
+    in: Button()@submit;
 }
 
-Controller c1 controls p1 {
+% A  line comment
+
+controller c1 controls p1 {
     @submit {
         if (valid(name, pass))
             goto(p4);
     }
 }
+
+%%
+    A
+    block
+    comment
+%%

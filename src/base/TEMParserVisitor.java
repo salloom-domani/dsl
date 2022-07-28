@@ -156,4 +156,10 @@ public interface TEMParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitMathmaticOperator(TEMParser.MathmaticOperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TEMParser#comment}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComment(TEMParser.CommentContext ctx);
 }

@@ -249,4 +249,14 @@ public interface TEMParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMathmaticOperator(TEMParser.MathmaticOperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TEMParser#comment}.
+	 * @param ctx the parse tree
+	 */
+	void enterComment(TEMParser.CommentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TEMParser#comment}.
+	 * @param ctx the parse tree
+	 */
+	void exitComment(TEMParser.CommentContext ctx);
 }

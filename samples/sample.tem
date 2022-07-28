@@ -1,9 +1,9 @@
-Page p1 {
+page p1 {
     in: field(name);
     in: field(pass);
 }
 
-Controller c1 controls p1 {
+controller c1 controls p1 {
     if(valid(name, pass))
         goto(p2);
 }
