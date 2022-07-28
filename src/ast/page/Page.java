@@ -29,4 +29,12 @@ public class Page extends Component {
         this.components.addAll(components);
     }
 
+    public Component getComponentById(String Id) {
+        return components
+                .stream()
+                .filter(component -> component.id.equals(Id))
+                .findFirst()
+                .orElse(null);
+    }
+
 }

@@ -4,7 +4,6 @@ import base.TEMParser.PageBodyContext;
 import base.TEMParser.BlockContext;
 import base.TEMParser.ComponentContext;
 import base.TEMParser.ControllerBodyContext;
-// import base.TEMParser.ControllerBodyContext;
 import base.TEMParser.ControllerContext;
 import base.TEMParser.EventContext;
 import base.TEMParser.ExpressionContext;
@@ -93,7 +92,12 @@ public class TEMVisitor extends TEMParserBaseVisitor<Object> {
 
     @Override
     public Component visitComponent(ComponentContext ctx) {
-        return visitIn(ctx.in());
+        if (ctx.in() != null) {
+            return visitIn(ctx.in());
+        }
+        else {
+            return visitOut(ctx.out());
+        }
     }
 
     @Override

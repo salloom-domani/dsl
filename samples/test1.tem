@@ -1,7 +1,12 @@
-page p1 extends p2, p3 {
-    in: TextField(name); % An inline comment
+page p1 {
+    in: TextField(name); 
     in: TextField(pass);
-    in: Button()@submit;
+    in: Button(btn)@submit;
+}
+
+page p2 extends p1 {
+    in: TextField(caption);
+    out: Image(image);
 }
 
 % A  line comment

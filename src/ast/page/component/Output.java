@@ -9,5 +9,9 @@ public class Output extends Component {
         super(id);
     }
 
+    @Override
+    public String toString() {
+        return id;
+    }
     
 }

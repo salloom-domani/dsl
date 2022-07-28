@@ -10,8 +10,7 @@ import visitor.TEMVisitor;
 public class App {
 
     public static void main(String[] args) throws Exception {
-
-
+        
         String file = "samples/test1.tem";
         CharStream sample = CharStreams.fromFileName(file);
         TEMLexer lexer = new TEMLexer(sample);
@@ -20,6 +19,6 @@ public class App {
         ParseTree pt = parser.program();
         TEMVisitor visitor = new TEMVisitor();
         visitor.visit(pt);
-        System.out.println(visitor.controllers.get("c1").events.get("submit").blocks);
+        System.out.println(visitor.pages.get("p2").getComponentById("image").toString());
     }
 }

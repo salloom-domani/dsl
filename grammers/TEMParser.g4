@@ -22,7 +22,7 @@ component
 
 
 // Components
-in: IN ':' inputField '(' fieldId=ID? ')' ( '@' eventId=ID )? ';';
+in: IN ':' inputField '(' fieldId=ID ')' ( '@' eventId=ID )? ';';
 inputField
     : TEXT_FIELD 
     | BUTTON 
