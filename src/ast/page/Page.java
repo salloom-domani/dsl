@@ -37,4 +37,8 @@ public class Page extends Component {
                 .orElse(null);
     }
 
+    public String getUrl() {
+        return id;
+    }
+
 }
