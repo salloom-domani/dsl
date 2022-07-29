@@ -34,6 +34,9 @@ public class TEMVisitor extends TEMParserBaseVisitor<Object> {
     public HashMap<String, Page> pages;
     public HashMap<String, Controller> controllers;
 
+    public Page currentPage;
+    public Controller currentController;
+
     public TEMVisitor() {
         pages = new HashMap<>();
         controllers = new HashMap<>();
@@ -112,11 +115,16 @@ public class TEMVisitor extends TEMParserBaseVisitor<Object> {
 
     @Override
     public Event visitEvent(EventContext ctx) {
-        String id = ctx.ID().getText();
+        String id = ctx.eventId.getText();
+        // TODO event id should not be the event name
+        
+        String componentId = ctx.componentId.getText();
+        Component component = currentController.getComponent(componentId);
+
         Block block = visitBlock(ctx.block(0)); 
         ArrayList<Block> blocks = new ArrayList<>();
         blocks.add(block);
-        Event event = new Event(id);
+        Event event = new Event(id, component);
         event.addBlocks(blocks);
         return event;
     }

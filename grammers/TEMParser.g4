@@ -40,7 +40,7 @@ outputField
 // Controller
 controller: CONTROLLER controllerId=ID CONTROLS pageId=ID controllerBody;
 controllerBody: '{' ( event | comment )* '}';
-event: '@' ID '{' block* '}';
+event: '@' eventId=ID '(' componentId=ID ')' '{' block* '}';
 
 
 // Blocks

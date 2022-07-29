@@ -1,7 +1,7 @@
 page p1 {
     in: TextField(name); 
     in: TextField(pass);
-    in: Button(btn)@submit;
+    in: Button(btn)@click;
 }
 
 page p2 extends p1 {
@@ -12,7 +12,7 @@ page p2 extends p1 {
 % A  line comment
 
 controller c1 controls p1 {
-    @submit {
+    @click(btn) {
         if (valid(name, pass))
             goto(p4);
     }
