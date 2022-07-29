@@ -13,7 +13,7 @@ program: ( page | controller | comment )*;
 
 // Page
 page: PAGE pageId=ID ( EXTENDS ID (',' ID)* )? pageBody;
-pageBody: '{' (component | comment)* '}';
+pageBody: '{' ( component | comment )* '}';
 component
     : in 
     | out 
@@ -39,7 +39,7 @@ outputField
 
 // Controller
 controller: CONTROLLER controllerId=ID CONTROLS pageId=ID controllerBody;
-controllerBody: '{' event* '}';
+controllerBody: '{' ( event | comment )* '}';
 event: '@' ID '{' block* '}';
 
 
@@ -48,6 +48,7 @@ block
     : statement 
     | ifBlock 
     | whileBlock 
+    | comment
     ;
 
 ifBlock: IF '(' expression ')' ( block | statement );
